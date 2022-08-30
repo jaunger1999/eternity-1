@@ -258,11 +258,9 @@ static bool P_CrossSubsector(int num, los_t *los)
          return false;
 
       // haleyjd 04/30/11: stop on BLOCKALL lines
-      if(line->extflags & EX_ML_BLOCKALL)
-         return false;
-	 
-	 //stop on BLOCKSIGHT lines
-	 if(line->extflags & EX_ML_BLOCKSIGHT)
+	  // jaunger 08-30-2022: also stop on BLOCKSIGHT lines
+	  // Seems safe to add EX_ML_BLOCKSIGHT condition as this function is only called in the context of sight
+      if(line->extflags & EX_ML_BLOCKALL || line->extflags & EX_ML_BLOCKSIGHT)
          return false;
 
       // crosses a two sided line
