@@ -281,6 +281,7 @@ private:
       bool midtex3dimpassible;   // zdoomish trick to make projectiles pass
       bool lowerportal;          // lower part acts as a portal extension
       bool upperportal;          // upper part acts as a portal extension
+	  bool blocksight;           // block enemy sight
       int portal;
       float alpha;               // opacity ratio
       qstring renderstyle;       // zdoomish renderstyle (add, translucent)

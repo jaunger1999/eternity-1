@@ -206,7 +206,7 @@ bool PathTraverser::checkLine(size_t linenum)
          return false; // stop checking
 
                        // haleyjd: block-all lines block sight
-      if(ld->extflags & EX_ML_BLOCKALL)
+      if(ld->extflags & EX_ML_BLOCKALL || ld->extflags & EX_ML_BLOCKSIGHT)
          return false; // can't see through it
    }
 

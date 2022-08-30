@@ -364,6 +364,8 @@ bool UDMFParser::loadLinedefs(UDMFSetupSettings &setupSettings)
             ld->extflags |= EX_ML_LOWERPORTAL;
          if(uld.upperportal)
             ld->extflags |= EX_ML_UPPERPORTAL;
+		 if(uld.blocksight)
+			ld->extflags |= EX_ML_BLOCKSIGHT;
          setupSettings.setLinePortal(i, uld.portal);
       }
 
