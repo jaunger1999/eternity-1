@@ -1773,6 +1773,7 @@ enum
    BLOCK_PLAYERS,
    BLOCK_MONSTERS_OFF,
    BLOCK_MONSTERS_ON,
+   BLOCK_MONSTER_SIGHT // not in ZDoom
 };
 
 //
@@ -1807,6 +1808,9 @@ static void ACS_setLineBlocking(const ACSThread *thread, int tag, int block)
          break;
       case BLOCK_MONSTERS_ON:
          l->flags |= ML_BLOCKMONSTERS;
+         break;
+	  case BLOCK_MONSTER_SIGHT: // jaunger 08-30-2022: Will this work?
+         l->extflags |= EX_ML_BLOCKSIGHT;
          break;
       default: // Others not implemented yet :P
          break;
